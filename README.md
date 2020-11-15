@@ -78,4 +78,21 @@ export class AppRoutingModule { }
 
 **- 安装依赖**
 
-命令：`npm i qiankun-ng-common`
+命令：`npm i qiankun-ng-common -S`, `npm i @angular-builders/custom-webpack -D`
+
+再安装一下缺失的依赖：`npm i`
+
+**- 删除empty-route文件夹，添加公共的空组件**
+
+*app1/app-routing.module.ts*
+
+```typescript
+const routes: Routes = [
+  {
+    path: '**',
+    component: EmptyComponent
+  }
+];
+```
+
+**- 更改子项目根组件选择器**
