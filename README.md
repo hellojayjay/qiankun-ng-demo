@@ -6,7 +6,7 @@
 
 命令：`ng n main`。询问是否需要路由时，选择Yes
 
-**- 添加基座项目依赖**
+**- 添加依赖**
 
 所需依赖：`qiankun`，`qiankun-ng-common`
 
@@ -54,69 +54,28 @@ export class AppRoutingModule { }
 
 此时，基座项目应该是可以启动，并且没有报错。
 
-继续下面的将会报错和子项目配置有关。
+继续下面的将会报错和子项目配置有关，我们在配置完子项目后，便不会报错了。
 
 **- 注册子项目**
 
 ```typescript
-import { Component, OnInit } from '@angular/core';
-import { registerMicroApps, runAfterFirstMounted, setDefaultMountApp, start, initGlobalState } from 'qiankun';
-
-@Component({
-	selector: 'app-root',
-	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.less']
-})
-export class AppComponent implements OnInit {
-
-	ngOnInit(): void {
-		this.registerMicroApps();
-
-		setDefaultMountApp('/ng9');
-
-		start();
-
-		runAfterFirstMounted(() => {
-			console.log('[MainApp] first app mounted');
-		});
-	}
-
-	registerMicroApps() {
-		registerMicroApps(
-			[
-				{
-					name: 'angular9',
-					entry: '//localhost:7103',
-					container: '#subapp-viewport',
-					activeRule: '/ng9',
-				},
-			],
-			{
-				beforeLoad: [
-					app => {
-						console.log('[LifeCycle] before load %c%s', 'color: green;', app.name);
-						return Promise.resolve();
-					},
-				],
-				beforeMount: [
-					app => {
-						console.log('[LifeCycle] before mount %c%s', 'color: green;', app.name);
-						return Promise.resolve();
-					},
-				],
-				afterUnmount: [
-					app => {
-						console.log('[LifeCycle] after unmount %c%s', 'color: green;', app.name);
-						return Promise.resolve();
-					},
-				],
-			}
-		);
-	}
-}
 
 ```
 
 
 
 ## 二、创建及配置子项目
+
+**- 创建一个子项目**
+
+命令：`ng n app1`
+
+**- 使用single-spa-angular schematics**
+
+命令：`ng add single-spa-angular`。PS：目前暂不支持angular11
+
+具体做了啥，参考：https://single-spa.js.org/docs/ecosystem-angular/#schematics
+
+**- 安装依赖**
+
+命令：`npm i qiankun-ng-common`
