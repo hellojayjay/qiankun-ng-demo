@@ -96,3 +96,34 @@ const routes: Routes = [
 ```
 
 **- 更改子项目根组件选择器**
+
+*app.component.ts*
+
+```typescript
+@Component({
+  selector: 'app1-root', // 此处不能和基座项目的根组件选择器相同
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.less']
+})
+export class AppComponent {}
+```
+
+*index.html*
+
+```html	
+<body>
+  <app1-root></app1-root>
+</body>
+```
+
+## 三、启动项目
+
+将基座项目启动端口改到7400，子项目启动端口改到7401后，运行下方命令分别启动基座项目和子项目。
+
+**- 启动基座项目**
+
+`npm start`
+
+**- 启动子项目**
+
+`npm run serve:single-spa:app1`
