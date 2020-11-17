@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.registerMicroApps();
 
-    setDefaultMountApp('/ng9');
+    setDefaultMountApp('/app1');
 
     start();
 
@@ -23,12 +23,6 @@ export class AppComponent implements OnInit {
   registerMicroApps(): void {
     registerMicroApps(
       [
-        // {
-        //   name: 'angular9',
-        //   entry: '//localhost:7103',
-        //   container: '#subapp-viewport',
-        //   activeRule: '/ng9',
-        // },
         {
           name: 'app1',
           entry: '//localhost:7401',
