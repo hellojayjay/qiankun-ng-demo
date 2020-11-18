@@ -2,7 +2,7 @@
 
 ## TODO LIST
 
-- [ ] 项目内静态资源访问
+- [x] 项目内静态资源访问 [3d6ff7f](https://github.com/hellojayjay/qiankun-ng-demo/commit/3d6ff7ff52c09ba1cb13af48d1ddf4dbffe2b03d)
 - [ ] nginx多服务器部署
 
 
