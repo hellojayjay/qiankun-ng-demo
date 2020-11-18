@@ -1,0 +1,10 @@
+{
+	"/app1/assets": {
+		"target": "http://localhost:7401",
+		"pathRewrite": {
+			"^/app1": ""
+		},
+		"secure": false,
+		"changeOrigin": true
+	}
+}
