@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { registerMicroApps, runAfterFirstMounted, setDefaultMountApp, start } from 'qiankun';
+import { environment as env } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -20,16 +21,10 @@ export class AppComponent implements OnInit {
     });
   }
 
+  /** 注册子项目 */
   registerMicroApps(): void {
     registerMicroApps(
-      [
-        {
-          name: 'app1',
-          entry: '//localhost:7401',
-          container: '#subapp-viewport',
-          activeRule: '/app1',
-        },
-      ],
+      env.appsConfig,
       {
         beforeLoad: [
           app => {

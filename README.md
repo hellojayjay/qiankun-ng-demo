@@ -1,12 +1,5 @@
 # 从零开始创建以Angular为基座项目的qiankun微前端项目
 
-## TODO LIST
-
-- [x] 项目内静态资源访问 [3d6ff7f](https://github.com/hellojayjay/qiankun-ng-demo/commit/3d6ff7ff52c09ba1cb13af48d1ddf4dbffe2b03d)
-- [ ] nginx多服务器部署
-
-
-
 ## 一、创建及配置基座项目
 
 **- 创建Angular项目**
@@ -66,7 +59,59 @@ export class AppRoutingModule { }
 **- 注册子项目**
 
 ```typescript
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.less']
+})
+export class AppComponent implements OnInit {
 
+  ngOnInit(): void {
+    this.registerMicroApps();
+
+    setDefaultMountApp('/app1');
+
+    start();
+
+    runAfterFirstMounted(() => {
+      console.log('[MainApp] first app mounted');
+    });
+  }
+
+  /** 注册子项目 */
+  registerMicroApps(): void {
+    registerMicroApps(
+      [
+        {
+          name: 'app1',
+          entry: '//localhost:7401',
+          container: '#subapp-viewport',
+          activeRule: '/app1',
+        },
+      ],
+      {
+        beforeLoad: [
+          app => {
+            console.log('[LifeCycle] before load %c%s', 'color: green;', app.name);
+            return Promise.resolve();
+          },
+        ],
+        beforeMount: [
+          app => {
+            console.log('[LifeCycle] before mount %c%s', 'color: green;', app.name);
+            return Promise.resolve();
+          },
+        ],
+        afterUnmount: [
+          app => {
+            console.log('[LifeCycle] after unmount %c%s', 'color: green;', app.name);
+            return Promise.resolve();
+          },
+        ],
+      }
+    );
+  }
+}
 ```
 
 
@@ -134,3 +179,13 @@ export class AppComponent {}
 **- 启动子项目**
 
 `npm run serve:single-spa:app1`
+
+**至此，应该已经能打开最基本的微前端项目了，若需后续配置，请查看 -四、TODO LIST- **
+
+## 四、TODO LIST
+
+*以下配置可能需要有一定前端开发基础才能完成*
+
+- [x] 项目内静态资源访问 [3d6ff7f](https://github.com/hellojayjay/qiankun-ng-demo/commit/3d6ff7ff52c09ba1cb13af48d1ddf4dbffe2b03d)
+- [ ] nginx多服务器部署
+
