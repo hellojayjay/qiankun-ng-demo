@@ -180,6 +180,10 @@ export class AppComponent {}
 
 `npm run serve:single-spa:app1`
 
+**- 页面展示效果：**
+
+![demo.gif](E:\qiankun-ng-demo\demo.gif)
+
 **至此，应该已经能打开最基本的微前端项目了，若需后续配置，请查看 -四、TODO LIST- **
 
 ## 四、TODO LIST
