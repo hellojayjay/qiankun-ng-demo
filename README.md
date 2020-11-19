@@ -187,6 +187,6 @@ export class AppComponent {}
 *以下配置可能需要有一定前端开发基础才能完成*
 
 - [x] 项目内静态资源访问 [3d6ff7f](https://github.com/hellojayjay/qiankun-ng-demo/commit/3d6ff7ff52c09ba1cb13af48d1ddf4dbffe2b03d)
-- [ ] nginx多服务器部署
+- [x] nginx多服务器部署 [ea98e35](https://github.com/hellojayjay/qiankun-ng-demo/commit/ea98e3543a72e4f8c37e04241d0749f37f9c4478) [cc41257](https://github.com/hellojayjay/qiankun-ng-demo/commit/cc4125701c03de0f8456f1fcd0855ab6bd5a4677)
 - [ ] 分别在基座项目和子项目中发起网络请求（需满足开发环境和生产环境）
 
