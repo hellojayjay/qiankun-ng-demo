@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { registerMicroApps, runAfterFirstMounted, setDefaultMountApp, start } from 'qiankun';
 import { environment as env } from 'src/environments/environment';
@@ -9,7 +10,15 @@ import { environment as env } from 'src/environments/environment';
 })
 export class AppComponent implements OnInit {
 
+  apiMsg: string;
+
+  constructor(
+    private http: HttpClient
+  ) { }
+
   ngOnInit(): void {
+    this.sendReq();
+
     this.registerMicroApps();
 
     setDefaultMountApp('/app1');
@@ -46,5 +55,11 @@ export class AppComponent implements OnInit {
         ],
       }
     );
+  }
+
+  sendReq(): void {
+    this.http.get(`${env.apiPrefix}`).subscribe(res => {
+      this.apiMsg = JSON.stringify(res);
+    });
   }
 }

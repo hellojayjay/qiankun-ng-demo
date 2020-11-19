@@ -10,6 +10,8 @@ const MICRO_APPS_CONFIG = [
 
 export const environment = {
   production: false,
+  /** 后端接口地址 */
+  apiPrefix: '/apis',
   /** 微应用配置 */
   appsConfig: MICRO_APPS_CONFIG
 };

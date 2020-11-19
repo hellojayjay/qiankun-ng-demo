@@ -1,6 +1,6 @@
 <h1>app1</h1>
 
-<div class="img-container">
+<div class="container">
   <p>app1项目图片</p>
   <!--
     直接使用相对路径的资源地址(../assets/chopper-app1.jpg)的话，会直接到基座项目的assets文件夹下面去找。
@@ -9,4 +9,7 @@
     基座项目启动时，将反向代理配置加上(ng serve --port=7400 --proxyConfig=proxy.conf.json)
   -->
   <img src="/app1/assets/chopper-app1.jpg" />
+</div>
+<div class="container">
+  <p><b>接口响应: </b>{{ apiMsg }}</p>
 </div>

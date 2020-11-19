@@ -8,6 +8,17 @@ const PROXY_CONFIG = [{
   },
   secure: false,
   changeOrigin: true
+}, {
+  context: [
+    "/apis",
+    "/app1Apis"
+  ],
+  target: "http://localhost:17500",
+  pathRewrite: {
+    "^/apis": ""
+  },
+  secure: false,
+  changeOrigin: true
 }];
 
 module.exports = PROXY_CONFIG;

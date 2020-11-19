@@ -10,5 +10,6 @@ const MICRO_APPS_CONFIG = [
 
 export const environment = {
   production: true,
+  apiPrefix: '/apis',
   appsConfig: MICRO_APPS_CONFIG
 };
