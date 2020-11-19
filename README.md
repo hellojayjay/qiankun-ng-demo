@@ -188,7 +188,7 @@ export class AppComponent {}
 
 - [x] 项目内静态资源访问 [3d6ff7f](https://github.com/hellojayjay/qiankun-ng-demo/commit/3d6ff7ff52c09ba1cb13af48d1ddf4dbffe2b03d)
 - [x] nginx多服务器部署 [ea98e35](https://github.com/hellojayjay/qiankun-ng-demo/commit/ea98e3543a72e4f8c37e04241d0749f37f9c4478) [cc41257](https://github.com/hellojayjay/qiankun-ng-demo/commit/cc4125701c03de0f8456f1fcd0855ab6bd5a4677)
-- [ ] 分别在基座项目和子项目中发起网络请求（需满足开发环境和生产环境）。*测试接口服务可在server文件夹下运行`npm start`以启动一个简易的api接口* 
+- [x] 分别在基座项目和子项目中发起网络请求（需满足开发环境和生产环境）。*测试接口服务可在server文件夹下运行`npm start`以启动一个简易的api接口* 
   - 开发环境实现：[4181dad](https://github.com/hellojayjay/qiankun-ng-demo/commit/4181dad45a9e0f5c758084113cdb34c23bf3888b)
   - 生产环境实现：[493ed70](https://github.com/hellojayjay/qiankun-ng-demo/commit/493ed709c36f1b90fdc23364e9e5433fa14dcf1c)
 
