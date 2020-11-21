@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>App1</title>
@@ -7,7 +8,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
+
 <body>
   <app1-root></app1-root>
+
+  <script>
+    // 如果项目部署启动在qiankun环境下，则需要引入zone.js
+    const isInQiankun = () => !!window['__POWERED_BY_QIANKUN__'];
+
+    const insertZonejs = () => {
+      const headEle = document.querySelector('head');
+      const zonejsEle = document.createElement('script');
+      zonejsEle.setAttribute('src', 'https://cdn.bootcdn.net/ajax/libs/zone.js/0.9.1/zone.min.js');
+      headEle.appendChild(zonejsEle);
+    };
+
+    if (!isInQiankun()) {
+      insertZonejs();
+    }
+  </script>
 </body>
+
 </html>

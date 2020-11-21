@@ -12,8 +12,15 @@ import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 import { singleSpaPropsSubject } from './single-spa/single-spa-props';
 
+const isInQiankun = () => !!window['__POWERED_BY_QIANKUN__'];
+
 if (environment.production) {
   enableProdMode();
+}
+
+// 如果不在qiankun下，则使用angular自带的启动方式
+if (!isInQiankun()) {
+  platformBrowserDynamic().bootstrapModule(AppModule).catch(err => console.error(err));
 }
 
 const lifecycles = singleSpaAngular({
