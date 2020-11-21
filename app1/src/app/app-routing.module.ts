@@ -4,6 +4,15 @@ import { EmptyComponent } from 'qiankun-ng-common';
 
 const routes: Routes = [
   {
+    path: 'app1',
+    children: [
+      {
+        path: 'lazy',
+        loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule)
+      },
+    ]
+  },
+  {
     path: '**',
     component: EmptyComponent
   }
