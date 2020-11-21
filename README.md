@@ -195,5 +195,5 @@ export class AppComponent {}
 - [x] 分别在基座项目和子项目中发起网络请求（需满足开发环境和生产环境）。*测试接口服务可在server文件夹下运行`npm start`以启动一个简易的api接口* 
   - 开发环境实现：[4181dad](https://github.com/hellojayjay/qiankun-ng-demo/commit/4181dad45a9e0f5c758084113cdb34c23bf3888b)
   - 生产环境实现：[493ed70](https://github.com/hellojayjay/qiankun-ng-demo/commit/493ed709c36f1b90fdc23364e9e5433fa14dcf1c)
-- [ ] 本地可独立启动基座/子项目开发
+- [x] 本地可独立启动基座/子项目开发 [e733561](https://github.com/hellojayjay/qiankun-ng-demo/commit/e7335610ea006469af57845c419168b4bb902423)
 
