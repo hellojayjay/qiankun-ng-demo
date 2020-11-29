@@ -1,25 +1,22 @@
+import { APP_BASE_HREF } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { EmptyComponent } from 'qiankun-ng-common';
 
 const routes: Routes = [
   {
-    path: 'app1',
-    children: [
-      {
-        path: 'lazy',
-        loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule)
-      },
-    ]
+    path: 'lazy',
+    loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule)
   },
-  {
-    path: '**',
-    component: EmptyComponent
-  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [
+    {
+      provide: APP_BASE_HREF,
+      useValue: '/app1' // 此处加上base-href 避免了多写一级的顶级路由；也避免了路由跳转的刷新
+    }
+  ]
 })
 export class AppRoutingModule { }

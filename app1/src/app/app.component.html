@@ -15,7 +15,8 @@
 </div>
 
 <div class="routes">
-  <a href="/app1/lazy">去懒加载的子模块</a>
+  <!-- 页面跳转只能使用routerLink，不能使用href，会使页面刷新 -->
+  <a routerLink="lazy">去懒加载的子模块</a>
 </div>
 
 <router-outlet></router-outlet>
