@@ -197,4 +197,6 @@ export class AppComponent {}
   - 生产环境实现：[493ed70](https://github.com/hellojayjay/qiankun-ng-demo/commit/493ed709c36f1b90fdc23364e9e5433fa14dcf1c)
 - [x] 本地可独立启动基座/子项目开发 [e733561](https://github.com/hellojayjay/qiankun-ng-demo/commit/e7335610ea006469af57845c419168b4bb902423)
 - [x] 子项目可添加懒加载模块 [2d58a8d](https://github.com/hellojayjay/qiankun-ng-demo/commit/2d58a8d50550806284ccea816617f68cb20b9cc0)
+- [x] 解决子项目内路由跳转刷新页面问题 [834d261](https://github.com/hellojayjay/qiankun-ng-demo/commit/834d261a57969a4a4d77e36f89a2c81ee1bf9308)
+
 
